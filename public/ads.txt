@@ -1,0 +1,16 @@
+# ads.txt — authorised digital sellers
+#
+# Adult ad networks use this the same way Google does: without it, a large share
+# of programmatic demand won't bid on your inventory.
+#
+# Replace the examples below with the exact lines your network gives you
+# (dashboard → "ads.txt" or "Authorized sellers"). Keep one entry per line.
+#
+# ExoClick:
+# exoclick.com, YOUR-PUBLISHER-ID, DIRECT
+#
+# JuicyAds:
+# juicyads.com, YOUR-PUBLISHER-ID, DIRECT
+#
+# TrafficJunky:
+# trafficjunky.com, YOUR-PUBLISHER-ID, DIRECT
