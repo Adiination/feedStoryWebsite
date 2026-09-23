@@ -42,7 +42,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function AboutPage({ params }: PageProps<"/[lang]/about">) {
+export default async function AboutPage({
+  params,
+}: PageProps<"/[lang]/about">) {
   const { lang: raw } = await params;
   if (!isLang(raw)) notFound();
   const lang: Lang = raw;
@@ -66,9 +68,10 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
 
       <div className="prose-story mt-10">
         <p>
-          {site.name} publishes explicit short fiction for adults, in English and
-          in Hindi. {enCount} English and {hiCount} Hindi stories so far. Every
-          story is free, nothing is gated, and there is no account to create.
+          {site.name} publishes explicit short fiction for adults, in English
+          and in Hindi. {enCount} English and {hiCount} Hindi stories so far.
+          Every story is free, nothing is gated, and there is no account to
+          create.
         </p>
 
         <h2>Our rules for what we publish</h2>
@@ -104,8 +107,8 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
           We read submissions between 1,500 and 6,000 words in any of our{" "}
           <Link href={path(lang, "/genres")}>categories</Link>, in English or
           Hinglish. Send the full text in the body of an email — no attachments.
-          Include a line confirming the work is yours and that all characters are
-          adults.
+          Include a line confirming the work is yours and that all characters
+          are adults.
         </p>
         <p>
           Rights are non-exclusive; you keep everything. We do not publish work
@@ -116,7 +119,6 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
         <p>
           Submissions, corrections and takedown requests all go to{" "}
           <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
-          Replace this with your own address before launch.
         </p>
       </div>
 
