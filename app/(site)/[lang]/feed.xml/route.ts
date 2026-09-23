@@ -3,7 +3,8 @@ import { DEFAULT_LANG, isLang, LOCALES, type Lang } from "@/lib/i18n";
 import { site, siteMeta } from "@/lib/site";
 import { getAllStories } from "@/lib/stories";
 
-export const dynamic = "force-static";
+// Prerendered, but re-read hourly so new stories reach subscribers.
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));

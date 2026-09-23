@@ -86,4 +86,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return entries;
 }
 
-export const dynamic = "force-static";
+// Prerendered, but re-read hourly so newly published stories get indexed.
+export const revalidate = 3600;

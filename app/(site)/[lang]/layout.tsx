@@ -33,6 +33,21 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+/**
+ * Re-read the database at most once a minute per page.
+ *
+ * Publishing from the admin calls revalidatePath, which updates the cache
+ * immediately — but that only reaches the instance that served the request,
+ * and it does not survive a restart or redeploy, at which point pages revert
+ * to the HTML generated at build time. Without an expiry those pages are
+ * cached forever, so a story published after the build can silently vanish.
+ *
+ * This is the safety net: even if revalidatePath never lands, every page
+ * re-reads the database within 60 seconds. Must be a literal — Next requires
+ * the value to be statically analysable.
+ */
+export const revalidate = 60;
+
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
