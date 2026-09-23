@@ -12,22 +12,23 @@ export const site = {
     "",
   ),
   /** Where takedown notices, DMCA claims and submissions land. */
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@example.com",
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
   social: { twitter: "" },
 } as const;
 
-export const siteMeta: Record<Lang, { tagline: string; description: string }> = {
-  en: {
-    tagline: "Erotic short fiction for adults.",
-    description:
-      "Explicit short stories written for grown-ups — free to read, no sign-up. Adults only: all characters are fictional and 18 or over.",
-  },
-  hi: {
-    tagline: "Baalig logon ke liye erotic kahaniyan.",
-    description:
-      "Baalig logon ke liye likhi gayi bold Hindi kahaniyan — padhna free, koi sign-up nahi. Sirf 18+ ke liye; sabhi kirdaar kalpanik aur baalig hain.",
-  },
-};
+export const siteMeta: Record<Lang, { tagline: string; description: string }> =
+  {
+    en: {
+      tagline: "Erotic short fiction for adults.",
+      description:
+        "Explicit short stories written for grown-ups — free to read, no sign-up. Adults only: all characters are fictional and 18 or over.",
+    },
+    hi: {
+      tagline: "Baalig logon ke liye erotic kahaniyan.",
+      description:
+        "Baalig logon ke liye likhi gayi bold Hindi kahaniyan — padhna free, koi sign-up nahi. Sirf 18+ ke liye; sabhi kirdaar kalpanik aur baalig hain.",
+    },
+  };
 
 /* ------------------------------ advertising ------------------------------- */
 
